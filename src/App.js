@@ -6,6 +6,7 @@ import About from './containers/About';
 import Header from './global-components/Header';
 import Footer from './global-components/Footer';
 import Produce from './containers/Produce';
+import Product from './global-components/Product';
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
           <Switch>
             <Route exact path='/about'>
               <About />
+            </Route>
+            <Route path='/produce/:id'>
+              <Product />
             </Route>
             <Route exact path='/produce'>
               <Produce />

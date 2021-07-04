@@ -40,6 +40,17 @@ export const getProducts = async (limit, price) => {
     return documents.map((doc) => ({ id: doc.id, ...doc.data() }));
 }
 
+export const getProduct = async (id) => {
+    const col = firestore.collection('product');
+    const ref = col.doc(id);
+    const doc =  await ref.get();
+
+    if(!doc.exists) {
+        return;
+    }
+
+    return { id: doc.id, ...doc.data() };
+};
 
 
 // // D in CRUD
@@ -61,14 +72,3 @@ export const getProducts = async (limit, price) => {
 //     await col.add(record);
 // };
 
-// export const getColleague = async (id) => {
-//     const col = firestore.collection("colleagues");
-//     const ref = col.doc(id);
-//     const doc = await ref.get();
-
-//     if (!doc.exists) {
-//         return;
-//     }
-
-//     return { id: doc.id, ...doc.data() };
-// };

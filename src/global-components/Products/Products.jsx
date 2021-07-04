@@ -36,10 +36,11 @@ const Products = () => {
                 // make sure key is on top level
                 <div key={product.id} className={styles.product}>
                     <div  className={styles.product__container}>
+                    <Link to={`/produce/${product.id}`} className={styles.product__link}>
                         <img className={styles.product__image} src={product.imgURL} alt={product.name} />
                         <h1 className={styles.product__title}>{product.name}</h1>
-                        {/* need link to product here */}
                         <p className={styles.product__price}>${product.price}</p>
+                    </Link>
                     </div>
                 </div>
             ))}  
