@@ -1,0 +1,18 @@
+.about {
+    margin: 5%;
+    &__title {
+        color: #053D67;
+        font-weight: normal;
+        text-align: center;
+        font-size: 2rem;
+    }
+    &__img {
+        width: 100%;
+        border-radius: 20px
+    }
+    &__paragraph {
+        font-size: 1.2rem;
+        margin: 30px;
+        color: #053D67;
+    }
+}

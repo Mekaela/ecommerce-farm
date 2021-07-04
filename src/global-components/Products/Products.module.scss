@@ -1,0 +1,38 @@
+.product {
+    // background-color: #0c3e662a;
+    max-width: 350px;
+    // min-height: 400px;
+    text-align: center;
+    margin: auto;
+    // width: 150px;
+    // border: 1px solid black;
+    &__title {
+        color: #12749C;
+        font-weight: normal;
+    }
+    &__price {
+        font-size: 1.4rem;
+    }
+    &__image {
+        height: 180px;
+        background-color: #0c3e661f;
+        padding: 70px;
+        border-radius: 50px;
+    }
+    &__container {
+
+    }
+}
+
+
+// need media query for when larger to be 2fr and then 3fr
+@media screen and (min-width: 500px) {
+    .product {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        &__container {
+            
+        }
+    }
+  }
