@@ -7,6 +7,7 @@ import Header from './global-components/Header';
 import Footer from './global-components/Footer';
 import Produce from './containers/Produce';
 import Product from './global-components/Product';
+// import Counter from './global-components/Counter';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           </Switch>
         </BrowserRouter>
       <Footer />
+      
     </div>
   );
 }
