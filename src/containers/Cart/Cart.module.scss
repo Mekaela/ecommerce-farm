@@ -1,0 +1,25 @@
+.cart {
+    margin: 7%;
+    border-radius: 20px;
+    background-color: #21b0d72d;
+    padding-bottom: 1%;
+    font-size: 1.5rem;
+    padding: 0px 8% 2%;
+    &__product {
+        display: flex;
+        justify-content: space-between;
+        height: 50px;
+        text-align: left;
+    }
+    &__title {
+        font-weight: normal;
+        
+    }
+    &__price {
+        
+    }
+    &__total {
+        text-align: right;
+        
+    }
+}

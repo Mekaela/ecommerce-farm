@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { getCartProducts, getProducts, updateCartProduct, addCartProduct } from '../../Data/Data';
 import styles from './Products.module.scss';
-import Counter from '../Counter';
+// import Counter from '../Counter';
 
 //
 const useQuery = () => {
