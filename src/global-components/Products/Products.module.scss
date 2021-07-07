@@ -1,17 +1,17 @@
 .product {
-    // background-color: #0c3e662a;
     max-width: 350px;
-    // min-height: 400px;
     text-align: center;
-    margin: auto;
-    // width: 150px;
-    // border: 1px solid black;
+    margin: 20px auto;
     &__title {
         color: #12749C;
         font-weight: normal;
+        margin: 10px;
     }
     &__price {
         font-size: 1.4rem;
+        margin: 10px 0px 0px 0px;
+        text-decoration: none;
+        color: #12749C;
     }
     &__image {
         height: 180px;
@@ -29,13 +29,22 @@
 
 
 // need media query for when larger to be 2fr and then 3fr
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 700px) {
     .product {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        display: inline-grid;
+        margin: auto;
+        grid-template-columns: repeat(2, 1fr);
         &__container {
-            
+        }
+    }
+  }
+
+  @media screen and (min-width: 8000px) {
+    .product {
+        display: inline-grid;
+        margin: auto;
+        grid-template-columns: repeat(3, 1fr);
+        &__container {
         }
     }
   }

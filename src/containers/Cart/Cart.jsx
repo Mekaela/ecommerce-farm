@@ -14,22 +14,22 @@ const Cart = () => {
         const data = await getProducts();
         // console.log("cart data ", cartData);
 
-        // let cartTotal = cartData.reduce(
-        //     price * count
-        // );
-            
-
         if (cartData.length > 0) {
             cartData.map((cartProduct) => { 
                 let product = data.find(d => d.id === cartProduct.id);
                 cartProduct.name = product.name;
-                cartProduct.price = product.price;
-                // product.count = cartProduct.count;
+                cartProduct.price = product.price * cartProduct.count;
             });
         }
         setCartProducts(cartData);
-        // setTotal(cartTotal);
     };
+
+    useEffect(() => {
+        let cartTotal = cartProducts.reduce((acc, cartItem) => {
+            return acc + cartItem.price;
+        }, 0);
+        setTotal(cartTotal)
+    }, [cartProducts]);
 
     useEffect(() => {
         //call getData

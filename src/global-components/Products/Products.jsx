@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { getCartProducts, getProducts, updateCartProduct, addCartProduct } from '../../Data/Data';
 import styles from './Products.module.scss';
 // import Counter from '../Counter';
+import style from './Counter.module.scss';
 
 //
 const useQuery = () => {
@@ -30,7 +31,7 @@ const Products = () => {
                 product.count = cartProduct.count;
             });
         }
-        console.log(data);
+        // console.log(data);
         setProducts(data);
     }
 
@@ -52,28 +53,38 @@ const Products = () => {
         getData();
     };
 
-    const handleDecrement = (event) => {
-        // if (count > 0) {
-        //     // setCount(count - 1);
-        // }
-        // return count;
+    const handleDecrement = async (event) => {
+        const data = await getCartProducts();
+        const currentProduct = data.find((a) => a.id === event);
+        console.log("current product is ", currentProduct);
+        if (!currentProduct) {
+            addCartProduct(event);
+        } else if (currentProduct.count === 0) {
+            return;
+        }
+        else {
+            currentProduct.count--;
+            updateCartProduct(currentProduct);
+        }
+        getData();
     };
 
     return (
         <>
             {products.map((product) => (
-                // make sure key is on top level
                 <div key={product.id} className={styles.product}>
                     <div  className={styles.product__container}>
                         <Link to={`/produce/${product.id}`} className={styles.product__link}>
                             <img className={styles.product__image} src={product.imgURL} alt={product.name} />
-                            <h1 className={styles.product__title}>{product.name}</h1>
+                            <h1 className={styles.product__title}>{product.name} </h1>
                             <p className={styles.product__price}>${product.price}</p>
                         </Link>
-                        <div className={styles.counter}>
-                            <button className={styles.counter__button} onClick={handleDecrement}> - </button>
-                            <div className={styles.counter__value}>{product.count}</div>
-                            <button className={styles.counter__button} onClick={() => handleIncrement(product.id)}> + </button>
+                        {/* <Count onchange={}/> */}
+                        <div className={style.counter}>
+                        <p className={style.counter__title}>Add to cart </p>
+                            <button className={style.counter__button} onClick={() => handleDecrement(product.id)}> - </button>
+                            <div className={style.counter__value}>{product.count}</div>
+                            <button className={style.counter__button} onClick={() => handleIncrement(product.id)}> + </button>
                         </div>
                     </div>
                 </div>

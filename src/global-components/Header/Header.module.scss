@@ -11,19 +11,27 @@
     &__link {
         text-decoration: none;
         color: #21B1D7;
-        & svg {
+        &:hover {
+            color: #053D67;
+        }
+        & svg, img {
             height: 45px;
+            color: #21B1D7;
         }
     }
 }
 
 .title {
-    text-align: center;
+    display: flex;
+    justify-content: center;
     font-weight: normal;
     color: #D34329;
-    // font-family: roboto;
     font-size: 3.2rem;
     margin-top: 0px;
+    text-decoration: none;
+    &:hover {
+        color: #d3422991;
+    }
 }
 
 @media only screen and (min-width: 700px) {
