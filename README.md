@@ -1,3 +1,12 @@
+# Designs
+
+The design of this was made to feel fun and cartoon like. It is my imagination of a science orientated, experimental farm which combines environmental protection with farming a wide variety of products.
+
+It was built in React, and used Firebase for the backend. 
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
